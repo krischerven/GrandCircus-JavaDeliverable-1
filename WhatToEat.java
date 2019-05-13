@@ -58,9 +58,9 @@ public class WhatToEat {
 	    	if (ERROR != "") {
 	    		ERROR += "\n";
 	    	}
-			// won't happen anymore due to sanity check above
+	    	// won't happen anymore due to sanity check above
 	    	ERROR += "ERROR: partySize was <= 0";
-		}
+	    }
 	    result = ERROR;
 	    if (result.equals("")) {
 		    result = "Since you're hosting a " + eventType + " event" + " for " + partySize + " participants, " + 
