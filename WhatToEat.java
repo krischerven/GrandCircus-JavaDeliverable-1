@@ -47,25 +47,25 @@ public class WhatToEat {
 	    	default: {
 	    		ERROR += "ERROR: eventType was not one of the available options";
 	    	}
-		}
+	    }
 	    if (partySize == 1) {
 			sugg2 = "in the microwave";
-		} else if (partySize > 1 && partySize < 13) {
+	    } else if (partySize > 1 && partySize < 13) {
 			sugg2 = "in your kitchen";
-		} else if (partySize >= 13) {
+	    } else if (partySize >= 13) {
 			sugg2 = "by a caterer";
-		} else {
-			if (ERROR != "") {
-				ERROR += "\n";
-			}
+	    } else {
+	    	if (ERROR != "") {
+	    		ERROR += "\n";
+	    	}
 			// won't happen anymore due to sanity check above
-			ERROR += "ERROR: partySize was <= 0";
+	    	ERROR += "ERROR: partySize was <= 0";
 		}
 	    result = ERROR;
 	    if (result.equals("")) {
 		    result = "Since you're hosting a " + eventType + " event" + " for " + partySize + " participants, " + 
 		    		"you should serve " + sugg1 + " prepared " + sugg2 + ".";
 	    }
-		System.out.println(result);
+	    System.out.println(result);
 	}
 }
