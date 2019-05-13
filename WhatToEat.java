@@ -55,7 +55,7 @@ public class WhatToEat {
 	    } else if (partySize >= 13) {
 			sugg2 = "by a caterer";
 	    } else {
-	    	if (ERROR != "") {
+	    	if (!ERROR.equals("")) {
 	    		ERROR += "\n";
 	    	}
 	    	// won't happen anymore due to sanity check above
