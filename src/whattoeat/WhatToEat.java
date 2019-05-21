@@ -5,13 +5,16 @@ public class WhatToEat {
 	public static void main(String[] args) {
 	    Scanner s = new Scanner(System.in);
 	    System.out.println("Enter event type (casual, semi-formal, formal):");
+	    
 	    var eventType = s.nextLine();
 	    while (!eventType.equals("casual") && !eventType.equals("semi-formal") && !eventType.equals("formal")) {
 	    	System.out.println("Invalid event type, please try again:");
 	    	eventType = s.nextLine();
 	    }
+
 	    System.out.println("You have selected " + eventType + " as your event type.");
 	    System.out.println("Enter party size:");
+
 	    var partySize = 0;
 	    try {
 	    	var tmp = s.nextLine();
@@ -26,10 +29,12 @@ public class WhatToEat {
 	    	System.out.println("Invalid party size, defaulting to 1...");
 	    	partySize = 1;
 	    }
+
 	    var sugg1 = "";
 	    var sugg2 = "";
 	    var ERROR = "";
 	    var result = "";
+
 	    switch (eventType) {
 	    	case "casual": {
     			sugg1 = "sandwiches";
@@ -48,6 +53,7 @@ public class WhatToEat {
 	    		ERROR += "ERROR: eventType was not one of the available options";
 	    	}
 	    }
+
 	    if (partySize == 1) {
 			sugg2 = "in the microwave";
 	    } else if (partySize > 1 && partySize < 13) {
@@ -61,11 +67,13 @@ public class WhatToEat {
 	    	// won't happen anymore due to sanity check above
 	    	ERROR += "ERROR: partySize was <= 0";
 	    }
+
 	    result = ERROR;
 	    if (result.equals("")) {
 		    result = "Since you're hosting a " + eventType + " event" + " for " + partySize + " participants, " + 
 		    		"you should serve " + sugg1 + " prepared " + sugg2 + ".";
 	    }
+	    
 	    System.out.println(result);
 	}
 }
